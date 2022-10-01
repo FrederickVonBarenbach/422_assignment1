@@ -43,17 +43,17 @@ public class Main {
         initializeStates(stateMap, stateList);
 
         // Specify initial belief state as a map
-        Double[][] beliefStateMap = { {0.0, 0.0, 0.0, 0.0},
+        Double[][] beliefStateMap = { {0.0, 1.0, 0.0, 0.0},
                                       {0.0, 0.0, 0.0, 0.0},
-                                      {1.0, 0.0, 0.0, 0.0} };
+                                      {0.0, 0.0, 0.0, 0.0} };
 
         // Specify actions as a list of integers
         // An action is an integer where 0 is UP, 1 is DOWN, 2 is RIGHT, 3 is LEFT
-        int[] actions = {0, 2, 2, 2};
+        int[] actions = {2, 2, 0};
 
         // Specify observations as a list of integers
-        // An observation is an integer where 0 is 1 WALL, 1 is 2 WALL, and 3 is TERMINAL
-        int[] observations = {1, 1, 0, 0};
+        // An observation is an integer where 0 is 1 WALL, 1 is 2 WALL, and 2 is TERMINAL
+        int[] observations = {0, 0, 2};
 
         computeBeliefState(beliefStateMap, actions, observations, stateMap, stateList);
     }
